@@ -62,7 +62,12 @@ class ComfortableMexicanSofa::Configuration
   # e.g. config.site_aliases = {'host.com' => 'host.inv', 'host_a.com' => ['host.lvh.me', 'host.dev']}
   # Default is nil (not used)
   attr_accessor :hostname_aliases
-  
+
+  # Path prefix.  If you add a path prefix to the routes and you dont attach
+  # CMS to root the checks and urls wont work.
+  #
+  attr_accessor :path_prefix
+
   # Configuration defaults
   def initialize
     @cms_title            = 'ComfortableMexicanSofa CMS Engine'
@@ -94,6 +99,7 @@ class ComfortableMexicanSofa::Configuration
     @allowed_helpers      = nil
     @allowed_partials     = nil
     @hostname_aliases     = nil
+    @path_prefix          = nil
   end
 
 end
